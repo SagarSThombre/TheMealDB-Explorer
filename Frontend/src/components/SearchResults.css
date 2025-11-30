@@ -1,0 +1,229 @@
+.search-results,
+.category-meals {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  min-height: 60vh;
+}
+
+.results-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.results-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin-bottom: 0.5rem;
+}
+
+.query-highlight {
+  color: var(--primary-gold);
+}
+
+.results-count {
+  color: var(--text-light);
+  font-size: 1.1rem;
+}
+
+.meals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2.5rem;
+}
+
+.meal-card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+  animation: fadeInUp 0.6s ease-out both;
+}
+
+.meal-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+}
+
+.meal-image {
+  width: 100%;
+  height: 250px;
+  border-radius: 16px 16px 0 0;
+}
+
+.meal-image .progressive-image-wrapper {
+  height: 250px;
+  border-radius: 16px 16px 0 0;
+}
+
+.meal-image .progressive-image {
+  height: 250px;
+  object-fit: cover;
+}
+
+.meal-card-content {
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.meal-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin: 0;
+  flex: 1;
+}
+
+.meal-card-arrow {
+  color: var(--primary-gold);
+  font-size: 1.5rem;
+  font-weight: bold;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: var(--transition);
+}
+
+.meal-card:hover .meal-card-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.skeleton-card {
+  pointer-events: none;
+}
+
+.skeleton-card .skeleton-image {
+  width: 100%;
+  height: 250px;
+  border-radius: 16px 16px 0 0;
+}
+
+.skeleton-card .skeleton-text {
+  margin: 1.5rem;
+  height: 24px;
+}
+
+.no-results {
+  text-align: center;
+  padding: 5rem 2rem;
+  background: var(--card-bg);
+  border-radius: 20px;
+  box-shadow: var(--shadow-sm);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.no-results-icon {
+  font-size: 5rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.5;
+}
+
+.no-results h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: var(--primary-dark);
+  margin-bottom: 1rem;
+}
+
+.no-results p {
+  font-size: 1.15rem;
+  color: var(--text-light);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.back-home-button {
+  padding: 1rem 2.5rem;
+  background: linear-gradient(135deg, var(--primary-gold) 0%, #c19b2a 100%);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+.back-home-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+}
+
+@media (max-width: 968px) {
+  .search-results,
+  .category-meals {
+    padding: 3rem 1.5rem;
+  }
+
+  .results-title {
+    font-size: 2rem;
+  }
+
+  .meals-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .search-results,
+  .category-meals {
+    padding: 2rem 1rem;
+  }
+
+  .results-header {
+    margin-bottom: 2rem;
+  }
+
+  .results-title {
+    font-size: 1.6rem;
+  }
+
+  .results-count {
+    font-size: 1rem;
+  }
+
+  .meals-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .meal-card-content {
+    padding: 1rem;
+  }
+
+  .meal-name {
+    font-size: 1.05rem;
+  }
+
+  .no-results {
+    padding: 3rem 1.5rem;
+  }
+
+  .no-results-icon {
+    font-size: 3.5rem;
+  }
+
+  .no-results h2 {
+    font-size: 1.6rem;
+  }
+
+  .no-results p {
+    font-size: 1rem;
+  }
+
+  .skeleton-card .skeleton-image {
+    height: 180px;
+  }
+}
